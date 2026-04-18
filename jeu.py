@@ -39,7 +39,9 @@ def game(word, max_attempts):
 if __name__ == "__main__":
     dictionnary = parsing_dictionary.parse_dictionnary(r'data\dictionnaire.txt')
     random_word = parsing_dictionary.get_random_word(dictionnary)
-    print(f"Random word: {random_word}")
+    
+    # Le mot n'est pas divulgué, mais sa longueur est affichée pour aider le joueur.
+    # print(f"Random word: {random_word}")
     print(f"Longueur du mot: {dictionnary[random_word]}")
     print("_" * dictionnary[random_word])
 
