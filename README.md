@@ -11,11 +11,14 @@ Ce jeu est une implémentation du jeu du pendu en Python. Le joueur doit deviner
 ## Dépendances
 - Python 3.x
 - Module `random` (inclus dans la bibliothèque standard Python)
+- PyYAML (pour charger la configuration)
+- colorama (pour l'affichage coloré dans le terminal)
 
 ## Installation
 1. Assurez-vous que Python 3.x est installé sur votre système.
 2. Clonez ou téléchargez ce dépôt.
 3. Naviguez vers le répertoire du projet.
+4. Installez les dépendances : `pip install -r requirements.txt`
 
 ## Comment lancer le jeu
 1. Ouvrez un terminal.
@@ -34,18 +37,20 @@ Ce jeu est une implémentation du jeu du pendu en Python. Le joueur doit deviner
 - Longueur du mot et tirets initiaux.
 - Invite : "Entrer une lettre: "
 - Feedback pour chaque tentative :
-  - "Bravo '[lettre]' se trouve dans le mot!" si correct.
-  - "Désolé '[lettre]' n'est pas dans le mot." si incorrect, avec le nombre de tentatives restantes.
+  - **Bleu** : "Bravo '[lettre]' se trouve dans le mot!" si correct.
+  - **Orange/Jaune** : "Désolé '[lettre]' n'est pas dans le mot." si incorrect, avec le nombre de tentatives restantes.
   - "Vous avez déjà deviné cette lettre. Essayez encore." si lettre déjà proposée.
   - "Veuillez entrer une lettre." si entrée vide.
 - État actuel du mot avec lettres devinées.
-- Message de victoire : "Félicitations! Vous avez deviné le mot '[mot]'!"
-- Message de défaite : "Perdu! Le mot était '[mot]'."
+- **Vert** : Message de victoire : "Félicitations! Vous avez deviné le mot '[mot]'!"
+- **Rouge** : Message de défaite : "Perdu! Le mot était '[mot]'."
 
 ## Structure du projet
 - `jeu.py` : Fichier principal du jeu.
 - `scripts/parsing_dictionnary.py` : Module pour parser le dictionnaire.
 - `data/dictionnaire.txt` : Fichier contenant les mots et leurs définitions.
+- `config.yaml` : Fichier de configuration avec le chemin du dictionnaire et le nombre maximum de tentatives.
+- `requirements.txt` : Liste des dépendances Python.
 - `README.md` : Ce fichier.
 
 ## Format du dictionnaire
